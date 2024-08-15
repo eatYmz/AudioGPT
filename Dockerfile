@@ -1,6 +1,9 @@
 # 基于官方的 Python 3.8 镜像
 FROM python:3.8-slim
 
+# 安装 git 和其他必要的依赖
+RUN apt-get update && apt-get install -y git && apt-get clean
+
 # 设置工作目录
 WORKDIR /app
 
